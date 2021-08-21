@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Fragment } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
@@ -9,6 +9,7 @@ import User from "./components/users/User";
 import GithubState from "./context/github/githubState";
 import AlertState from "./context/alert/AlertState";
 import { BrowserRouter } from "react-router-dom";
+import NotFound from "./components/pages/NotFound";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/about' component={About} />
                 <Route exact path='/user/:login' component={User} />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
